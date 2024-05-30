@@ -14,7 +14,3 @@ profile.json
 
 # User defined CMake preset file.
 CMakeUserPresets.json
-
-# Other junk.
-.DS_Store
-Thumbs.db
