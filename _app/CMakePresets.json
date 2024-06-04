@@ -63,7 +63,7 @@
       "configurePreset": "release",
       "configuration": "Release",
       "targets": [
-        "App"
+        "Binarylizer"
       ]
     },
     {
@@ -83,7 +83,7 @@
       "configurePreset": "xcode-release",
       "configuration": "Release",
       "targets": [
-        "App"
+        "Binarylizer"
       ],
       "condition": {
         "type": "equals",

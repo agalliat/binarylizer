@@ -22,7 +22,7 @@ set(CPACK_RESOURCE_FILE_README ${CMAKE_CURRENT_LIST_DIR}/Readme.txt)
 set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_LIST_DIR}/License.txt)
 
 # This option will change the mount drive icon used.
-# set(CPACK_PACKAGE_ICON ${CMAKE_CURRENT_LIST_DIR}/dmg/volume.icns)
+set(CPACK_PACKAGE_ICON ${CMAKE_CURRENT_LIST_DIR}/dmg/volume.icns)
 
 # macOS settings for DragNDrop generator
 set(CPACK_DMG_SLA_USE_RESOURCE_FILE_LICENSE OFF)
@@ -51,7 +51,7 @@ set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Maintainer Name")
 
 # Define how to install and uninstall start menu entries on Windows
 set(CPACK_NSIS_CREATE_ICONS_EXTRA
-  "CreateShortCut '$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\${CMAKE_PROJECT_NAME}.lnk' '$INSTDIR\\\\bin\\\\App.exe'")
+  "CreateShortCut '$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\${CMAKE_PROJECT_NAME}.lnk' '$INSTDIR\\\\bin\\\\${NAME}.exe'")
 set(CPACK_NSIS_DELETE_ICONS_EXTRA
   "Delete '$SMPROGRAMS\\\\$START_MENU\\\\${CMAKE_PROJECT_NAME}.lnk'")
 

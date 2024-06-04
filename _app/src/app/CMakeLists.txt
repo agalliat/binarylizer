@@ -1,4 +1,4 @@
-set(NAME "App")
+set(NAME "${CMAKE_PROJECT_NAME}")
 
 include(${PROJECT_SOURCE_DIR}/cmake/StaticAnalyzers.cmake)
 

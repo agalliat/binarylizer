@@ -1,0 +1,20 @@
+{
+  "name": "icon-gen-examples",
+  "description": "Examples for the icon-gen.",
+  "private": true,
+  "version": "1.0.0",
+  "author": "akabeko (http://akabeko.me/)",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "js:svg": "node from-svg.js",
+    "js:png": "node from-png.js",
+    "ts:svg": "ts-node from-svg.ts",
+    "ts:png": "ts-node from-png.ts"
+  },
+  "dependencies": {
+    "icon-gen": "file:icon-gen-2.1.0.tgz",
+    "ts-node": "^9.1.0",
+    "typescript": "^4.1.2"
+  }
+}
