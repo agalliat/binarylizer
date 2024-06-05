@@ -2,11 +2,11 @@ include(FetchContent)
 
 # Dependencies
 
-FetchContent_Declare(
-  doctest
-  GIT_REPOSITORY "https://github.com/onqtam/doctest.git"
-  GIT_TAG v2.4.11
-)
+# FetchContent_Declare(
+#   doctest
+#   GIT_REPOSITORY "https://github.com/onqtam/doctest.git"
+#   GIT_TAG v2.4.11
+# )
 
 FetchContent_Declare(
   fmt
@@ -52,4 +52,5 @@ add_subdirectory(imgui-setup)
 
 # Populate
 
-FetchContent_MakeAvailable(doctest fmt glad imgui SDL2 spdlog)
+# FetchContent_MakeAvailable(doctest fmt glad imgui SDL2 spdlog)
+FetchContent_MakeAvailable(fmt glad imgui SDL2 spdlog)
