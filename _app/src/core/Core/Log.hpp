@@ -38,25 +38,25 @@ class Log {
 #ifndef APP_DEACTIVATE_LOGGING
 
 #if DEBUG
-#define APP_TRACE(...) ::App::Log::logger()->trace(__VA_ARGS__)
-#define APP_DEBUG(...) ::App::Log::logger()->debug(__VA_ARGS__)
+#define LOG_TRACE(...) ::App::Log::logger()->trace(__VA_ARGS__)
+#define LOG_DEBUG(...) ::App::Log::logger()->debug(__VA_ARGS__)
 #else
-#define APP_TRACE(...)
-#define APP_DEBUG(...)
+#define LOG_TRACE(...)
+#define LOG_DEBUG(...)
 #endif
 
-#define APP_INFO(...) ::App::Log::logger()->info(__VA_ARGS__)
-#define APP_WARN(...) ::App::Log::logger()->warn(__VA_ARGS__)
-#define APP_ERROR(...) ::App::Log::logger()->error(__VA_ARGS__)
-#define APP_FATAL(...) ::App::Log::logger()->fatal(__VA_ARGS__)
+#define LOG_INFO(...) ::App::Log::logger()->info(__VA_ARGS__)
+#define LOG_WARN(...) ::App::Log::logger()->warn(__VA_ARGS__)
+#define LOG_ERROR(...) ::App::Log::logger()->error(__VA_ARGS__)
+#define LOG_FATAL(...) ::App::Log::logger()->fatal(__VA_ARGS__)
 
 #else
 
-#define APP_TRACE(...)
-#define APP_DEBUG(...)
-#define APP_INFO(...)
-#define APP_WARN(...)
-#define APP_ERROR(...)
-#define APP_FATAL(...)
+#define LOG_TRACE(...)
+#define LOG_DEBUG(...)
+#define LOG_INFO(...)
+#define LOG_WARN(...)
+#define LOG_ERROR(...)
+#define LOG_FATAL(...)
 
 #endif

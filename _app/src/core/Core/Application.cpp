@@ -21,7 +21,7 @@ Application::Application(const std::string& title) {
 
   const unsigned int init_flags{SDL_INIT_VIDEO | SDL_INIT_TIMER};
   if (SDL_Init(init_flags) != 0) {
-    APP_ERROR("Error: %s\n", SDL_GetError());
+    LOG_ERROR("Error: %s\n", SDL_GetError());
     m_exit_status = ExitStatus::FAILURE;
   }
 
@@ -58,7 +58,7 @@ ExitStatus App::Application::run() {
   io.ConfigDockingTransparentPayload = true;
 
   const std::string user_config_path{SDL_GetPrefPath(COMPANY_NAMESPACE.c_str(), APP_NAME.c_str())};
-  APP_DEBUG("User config path: {}", user_config_path);
+  LOG_DEBUG("User config path: {}", user_config_path);
 
   // Absolute imgui.ini path to preserve settings independent of app location.
   static const std::string imgui_ini_filename{user_config_path + "imgui.ini"};

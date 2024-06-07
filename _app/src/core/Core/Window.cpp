@@ -29,7 +29,7 @@ Window::Window(const Settings& settings) {
   // NOLINTNEXTLINE
   m_gl_context = SDL_GL_CreateContext(m_window);
   if (m_gl_context == nullptr) {
-    APP_ERROR("Could not create SDL OpenGL context.");
+    LOG_ERROR("Could not create SDL OpenGL context.");
     return;
   }
 
