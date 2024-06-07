@@ -4,14 +4,11 @@
 #include <glad/glad.h>
 
 #include "Core/DPIHandler.hpp"
-#include "Core/Debug/Instrumentor.hpp"
 #include "Core/Log.hpp"
 
 namespace App {
 
 Window::Window(const Settings& settings) {
-  APP_PROFILE_FUNCTION();
-
   // Create window with graphics context
   SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
   SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
@@ -42,21 +39,15 @@ Window::Window(const Settings& settings) {
 }
 
 Window::~Window() {
-  APP_PROFILE_FUNCTION();
-
   SDL_GL_DeleteContext(m_gl_context);
   SDL_DestroyWindow(m_window);
 }
 
 SDL_Window* Window::get_native_window() const {
-  APP_PROFILE_FUNCTION();
-
   return m_window;
 }
 
 SDL_GLContext Window::get_native_context() const {
-  APP_PROFILE_FUNCTION();
-
   return m_gl_context;
 }
 

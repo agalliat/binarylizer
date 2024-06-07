@@ -1,7 +1,5 @@
 set(NAME "${CMAKE_PROJECT_NAME}")
 
-include(${PROJECT_SOURCE_DIR}/cmake/StaticAnalyzers.cmake)
-
 add_executable(${NAME} WIN32 MACOSX_BUNDLE App/Main.cpp)
 
 include(${PROJECT_SOURCE_DIR}/src/app/cmake/AppAssets.cmake)

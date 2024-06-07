@@ -10,7 +10,6 @@
 #include <string>
 
 #include "Core/DPIHandler.hpp"
-#include "Core/Debug/Instrumentor.hpp"
 #include "Core/Log.hpp"
 #include "Core/Resources.hpp"
 #include "Core/Window.hpp"
@@ -19,7 +18,6 @@
 namespace App {
 
 Application::Application(const std::string& title) {
-  APP_PROFILE_FUNCTION();
 
   const unsigned int init_flags{SDL_INIT_VIDEO | SDL_INIT_TIMER};
   if (SDL_Init(init_flags) != 0) {
@@ -36,8 +34,6 @@ Application::Application(const std::string& title) {
 }
 
 Application::~Application() {
-  APP_PROFILE_FUNCTION();
-
   ImGui_ImplOpenGL3_Shutdown();
   ImGui_ImplSDL2_Shutdown();
   ImGui::DestroyContext();
@@ -46,8 +42,6 @@ Application::~Application() {
 }
 
 ExitStatus App::Application::run() {
-  APP_PROFILE_FUNCTION();
-
   if (m_exit_status == ExitStatus::FAILURE) {
     return m_exit_status;
   }
@@ -85,12 +79,8 @@ ExitStatus App::Application::run() {
 
   m_running = true;
   while (m_running) {
-    APP_PROFILE_SCOPE("MainLoop");
-
     SDL_Event event{};
     while (SDL_PollEvent(&event) == 1) {
-      APP_PROFILE_SCOPE("EventPolling");
-
       ImGui_ImplSDL2_ProcessEvent(&event);
 
       if (event.type == SDL_QUIT) {
@@ -176,14 +166,10 @@ ExitStatus App::Application::run() {
 }
 
 void App::Application::stop() {
-  APP_PROFILE_FUNCTION();
-
   m_running = false;
 }
 
 void Application::on_event(const SDL_WindowEvent& event) {
-  APP_PROFILE_FUNCTION();
-
   switch (event.event) {
     case SDL_WINDOWEVENT_CLOSE:
       return on_close();
@@ -198,20 +184,14 @@ void Application::on_event(const SDL_WindowEvent& event) {
 }
 
 void Application::on_minimize() {
-  APP_PROFILE_FUNCTION();
-
   m_minimized = true;
 }
 
 void Application::on_shown() {
-  APP_PROFILE_FUNCTION();
-
   m_minimized = false;
 }
 
 void Application::on_close() {
-  APP_PROFILE_FUNCTION();
-
   stop();
 }
 

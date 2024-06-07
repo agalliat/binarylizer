@@ -1,7 +1,5 @@
 set(NAME "Settings")
 
-include(${PROJECT_SOURCE_DIR}/cmake/StaticAnalyzers.cmake)
-
 configure_file(Settings/Project.cpp.in Settings/Project.cpp @ONLY)
 
 add_library(${NAME} STATIC Settings/Project.hpp Settings/Project.cpp)
