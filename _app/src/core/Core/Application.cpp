@@ -101,46 +101,46 @@ ExitStatus App::Application::run() {
     if (!m_minimized) {
       ImGui::DockSpaceOverViewport();
 
-      if (ImGui::BeginMainMenuBar()) {
-        if (ImGui::BeginMenu("File")) {
-          if (ImGui::MenuItem("Exit", "Cmd+Q")) {
-            stop();
-          }
-          ImGui::EndMenu();
-        }
-        if (ImGui::BeginMenu("View")) {
-          ImGui::MenuItem("Some Panel", nullptr, &m_show_some_panel);
-          ImGui::MenuItem("ImGui Demo Panel", nullptr, &m_show_demo_panel);
-          ImGui::MenuItem("Debug Panel", nullptr, &m_show_debug_panel);
-          ImGui::EndMenu();
-        }
+      // if (ImGui::BeginMainMenuBar()) {
+      //   if (ImGui::BeginMenu("File")) {
+      //     if (ImGui::MenuItem("Exit", "Cmd+Q")) {
+      //       stop();
+      //     }
+      //     ImGui::EndMenu();
+      //   }
+      //   if (ImGui::BeginMenu("View")) {
+      //     ImGui::MenuItem("Some Panel", nullptr, &m_show_some_panel);
+      //     ImGui::MenuItem("ImGui Demo Panel", nullptr, &m_show_demo_panel);
+      //     ImGui::MenuItem("Debug Panel", nullptr, &m_show_debug_panel);
+      //     ImGui::EndMenu();
+      //   }
 
-        ImGui::EndMainMenuBar();
-      }
+      //   ImGui::EndMainMenuBar();
+      // }
 
-      // Whatever GUI to implement here ...
-      if (m_show_some_panel) {
-        ImGui::Begin("Some panel", &m_show_some_panel);
-        ImGui::Text("Hello World");
-        ImGui::End();
-      }
+      // // Whatever GUI to implement here ...
+      // if (m_show_some_panel) {
+      //   ImGui::Begin("Some panel", &m_show_some_panel);
+      //   ImGui::Text("Hello World");
+      //   ImGui::End();
+      // }
 
-      // ImGUI demo panel
-      if (m_show_demo_panel) {
-        ImGui::ShowDemoWindow(&m_show_demo_panel);
-      }
+      // // ImGUI demo panel
+      // if (m_show_demo_panel) {
+      //   ImGui::ShowDemoWindow(&m_show_demo_panel);
+      // }
 
-      // Debug panel
-      if (m_show_debug_panel) {
-        ImGui::Begin("Debug panel", &m_show_debug_panel);
-        ImGui::Text("User config path: %s", user_config_path.c_str());
-        ImGui::Separator();
-        ImGui::Text("Font path: %s", font_path.c_str());
-        ImGui::Text("Font size: %f", font_size);
-        ImGui::Text("Global font scaling %f", io.FontGlobalScale);
-        ImGui::Text("UI scaling factor: %f", font_scaling_factor);
-        ImGui::End();
-      }
+      // // Debug panel
+      // if (m_show_debug_panel) {
+      //   ImGui::Begin("Debug panel", &m_show_debug_panel);
+      //   ImGui::Text("User config path: %s", user_config_path.c_str());
+      //   ImGui::Separator();
+      //   ImGui::Text("Font path: %s", font_path.c_str());
+      //   ImGui::Text("Font size: %f", font_size);
+      //   ImGui::Text("Global font scaling %f", io.FontGlobalScale);
+      //   ImGui::Text("UI scaling factor: %f", font_scaling_factor);
+      //   ImGui::End();
+      // }
     }
 
     // Rendering
